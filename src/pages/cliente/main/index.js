@@ -14,7 +14,7 @@ export default class Main extends Component {
     }
  
     componentDidMount() {
-        fetch(`https://cliente-backend-engenharia.herokuapp.com/cliente`)
+        fetch(`${process.env.REACT_APP_API_URL}`)
             .then(cliente =>
                 cliente.json().then(cliente => this.setState({ cliente }))
             )
